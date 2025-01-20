@@ -6,15 +6,19 @@
     <title>Citlali Trigos-Raczkowski - Academic Profile</title>
     <style>
         body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            margin: 0;
             padding: 20px 40px;
             color: #333;
         }
 
         nav {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         nav ul {
@@ -102,9 +106,7 @@
         <ul>
             <li><a href="#home" class="active" onclick="showSection('home')">Home</a></li>
             <li><a href="#work" onclick="showSection('work')">Work in Progress</a></li>
-            <li><a href="#publications" onclick="showSection('publications')">Publications</a></li>
             <li><a href="#cv" onclick="showSection('cv')">CV</a></li>
-            <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
         </ul>
     </nav>
 
@@ -118,10 +120,14 @@
         <div class="affiliations">
             <h2 class="title">Masters student in Demography in the European Doctoral School of Demography (EDSD)</h2>
             <p>Institut national d'études démographiques (INED)</p>
-            <span>cbtrigos@gmail.com</span>
-    <button onclick="copyEmail()" style="padding: 4px 12px; border: 1px solid #666; background: none; cursor: pointer; border-radius: 4px; color: #666;">
-        Copy
-    </button>
+
+        <button onclick="copyEmail()" style="display: flex; align-items: center; gap: 0.5rem; padding: 6px 12px; border: 1px solid #666; background: none; cursor: pointer; border-radius: 4px; color: #666; font-family: inherit; font-size: 1rem; font-weight: 300; margin: 1rem 0;">
+            cbtrigos@gmail.com
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+            </svg>
+        </button>
             <p class="address">
                 Campus Condorcet<br>
                 9 cours des Humanités<br>
@@ -154,7 +160,7 @@
     <section id="cv" class="content-section">
         <h2>Curriculum Vitae</h2>
         <div style="margin-top: 1.5rem;">
-            <a href="files/CV_jan-2024.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #666; padding: 8px 16px; border: 1px solid #666; border-radius: 4px;">
+            <a href="https://drive.google.com/file/d/1cEOjG4A5notBAsbOYVVU6HU21UbyrAgU/view?usp=sharing" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #666; padding: 8px 16px; border: 1px solid #666; border-radius: 4px;">
                 View CV
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -185,11 +191,26 @@
             });
         }
 
+        function copyEmail() {
+            navigator.clipboard.writeText('cbtrigos@gmail.com')
+                .then(() => {
+                    const button = document.querySelector('button');
+                    button.style.backgroundColor = '#e8e8e8';
+                    setTimeout(() => {
+                        button.style.backgroundColor = '';
+                    }, 200);
+                })
+                .catch(err => {
+                    console.error('Failed to copy email:', err);
+                });
+        }
+
         // Handle direct navigation via URL hash
         window.addEventListener('hashchange', () => {
             const section = window.location.hash.slice(1) || 'home';
             showSection(section);
         });
+
     </script>
 </body>
 </html>
