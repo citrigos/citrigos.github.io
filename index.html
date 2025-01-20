@@ -195,32 +195,31 @@
     }
     
     
-             /* Disco Ball */
-/* Disco Ball */
-.disco-ball {
-    display: none;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle at 50% 50%, #fff 0%, #ffd1dc 50%, #ffb6c1 100%);
-    border-radius: 50%;
-    box-shadow: 
-        inset 0 0 30px #fff,
-        inset 20px 0 60px #ffd1dc,
-        inset -20px 0 60px #ffefd5,
-        inset 20px 0 200px #ffb6c1,
-        inset -20px 0 200px #ffdab9,
-        0 0 30px #fff,
-        -10px 0 60px #ffd1dc,
-        10px 0 60px #ffefd5;
-    animation: rotate 5s linear infinite, sparkle 0.5s linear infinite;
-}
-
-.party-mode .disco-ball {
-    display: block;
-}
+    /* Disco Ball */
+    .disco-ball {
+        display: none;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 120px;
+        height: 120px;
+        background: radial-gradient(circle at 50% 50%, #fff 0%, #ffd1dc 50%, #ffb6c1 100%);
+        border-radius: 50%;
+        box-shadow: 
+            inset 0 0 30px #fff,
+            inset 20px 0 60px #ffd1dc,
+            inset -20px 0 60px #ffefd5,
+            inset 20px 0 200px #ffb6c1,
+            inset -20px 0 200px #ffdab9,
+            0 0 30px #fff,
+            -10px 0 60px #ffd1dc,
+            10px 0 60px #ffefd5;
+        animation: rotate 5s linear infinite, sparkle 0.5s linear infinite;
+    }
+    
+    .party-mode .disco-ball {
+        display: block;
+    }
 
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
@@ -238,6 +237,96 @@
             50% { opacity: 1; }
             100% { opacity: 0.8; }
         }
+        
+        /* Add these media queries at the end of your CSS */
+    @media screen and (max-width: 850px) {
+        body {
+            padding: 15px;
+        }
+
+        nav, .hero, .content-section {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        nav ul {
+            gap: 1rem;
+            flex-wrap: wrap;  /* Allow items to wrap on very small screens */
+            justify-content: center;
+        }
+
+        .hero {
+            height: 300px;  /* Shorter on mobile */
+        }
+
+        .hero h1 {
+            font-size: 2rem;  /* Smaller font on mobile */
+            bottom: 0;
+            left: 1rem;
+        }
+
+        /* Make the copy email button more touch-friendly */
+        p[onclick="copyEmail()"] svg {
+            width: 20px;
+            height: 20px;
+            margin-left: 8px;
+        }
+
+        /* Adjust work section padding */
+        #work ol {
+            padding-left: 20px;
+        }
+
+        /* Make the CV iframe responsive */
+        #cv iframe {
+            height: 800px;
+        }
+
+        /* Adjust disco ball position */
+        .disco-ball {
+            width: 80px;
+            height: 80px;
+            top: 10px;
+            right: 10px;
+        }
+    }
+
+    /* Additional adjustments for very small screens */
+    @media screen and (max-width: 480px) {
+        nav ul {
+            gap: 0.8rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+        }
+
+        .title {
+            font-size: 1.2rem;
+        }
+        
+        /* Stack nav items vertically on very small screens */
+        nav ul {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .light-switch {
+            margin: 0.5rem 0;
+        }
+
+        /* Adjust presentations list */
+        li a {
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+    }
 
     </style>
 </head>
