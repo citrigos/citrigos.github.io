@@ -3,28 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Academic Profile</title>
+    <title>Citlali Trigos-Raczkowski - Academic Profile</title>
     <style>
-        :root {
-            --primary-color: #666;
-            --secondary-color: #808080;
-            --accent-color: #3498db;
-            --text-color: #333;
-        }
-        
         body {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
-            padding: 0;
-            color: var(--text-color);
+            padding: 20px 40px;
+            color: #333;
         }
 
         nav {
-            background-color: var(--primary-color);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
+            margin-bottom: 20px;
         }
 
         nav ul {
@@ -32,25 +22,25 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: center;
             gap: 2rem;
         }
 
         nav a {
-            color: white;
+            color: #666;
             text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
+            font-weight: 300;
+            font-size: 1.1rem;
         }
 
-        nav a:hover {
-            color: var(--accent-color);
+        nav a:hover, nav a.active {
+            color: #333;
         }
 
         .hero {
             position: relative;
+            width: 800px;
             height: 400px;
-            overflow: hidden;
+            margin-bottom: 40px;
         }
 
         .hero img {
@@ -66,21 +56,22 @@
             color: white;
             font-size: 3rem;
             font-weight: 300;
-            text-shadow: none;
             margin: 0;
-            background: transparent;
-            padding: 0;
             letter-spacing: -0.02em;
         }
 
-        main {
+        .content-section {
+            display: none;
             max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+        }
+
+        .content-section.active {
+            display: block;
         }
 
         .title {
-            color: var(--primary-color);
+            color: #666;
+            font-weight: 300;
             margin-bottom: 0.5rem;
         }
 
@@ -89,44 +80,41 @@
         }
 
         .address {
-            color: var(--secondary-color);
-            font-style: italic;
+            color: #808080;
+            font-style: normal;
         }
 
-        @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                gap: 1rem;
-            }
+        /* CV specific styles */
+        .cv-section {
+            margin-bottom: 2rem;
+        }
 
-            .hero {
-                height: 300px;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
+        .cv-section h2 {
+            color: #666;
+            font-weight: 300;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
         }
     </style>
 </head>
 <body>
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#work">Work in Progress</a></li>
-            <li><a href="#publications">Publications</a></li>
-            <li><a href="#cv">CV</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" class="active" onclick="showSection('home')">Home</a></li>
+            <li><a href="#work" onclick="showSection('work')">Work in Progress</a></li>
+            <li><a href="#publications" onclick="showSection('publications')">Publications</a></li>
+            <li><a href="#cv" onclick="showSection('cv')">CV</a></li>
+            <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
         </ul>
     </nav>
 
-    <div class="hero">
-        <img src="/api/placeholder/1200/400" alt="Hero Image">
-        <h1>Citlali Trigos-Raczkowski</h1>
-    </div>
+    <!-- Home Section -->
+    <section id="home" class="content-section active">
+        <div class="hero">
+            <img src="/api/placeholder/800/400" alt="Hero Image">
+            <h1>Citlali Trigos-Raczkowski</h1>
+        </div>
 
-    <main>
         <div class="affiliations">
             <h2 class="title">Research Fellow</h2>
             <p>Institut national d'études démographiques (INED)</p>
@@ -137,8 +125,56 @@
                 France
             </p>
         </div>
+    </section>
 
-        <!-- Add more sections as needed -->
-    </main>
+    <!-- Work in Progress Section -->
+    <section id="work" class="content-section">
+        <h2>Work in Progress</h2>
+        <!-- Add your work in progress content here -->
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="content-section">
+        <h2>Publications</h2>
+        <!-- Add your publications here -->
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="content-section">
+        <h2>Curriculum Vitae</h2>
+        <!-- Add your CV content here -->
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section">
+        <h2>Contact</h2>
+        <!-- Add your contact information here -->
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update active nav link
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + sectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Handle direct navigation via URL hash
+        window.addEventListener('hashchange', () => {
+            const section = window.location.hash.slice(1) || 'home';
+            showSection(section);
+        });
+    </script>
 </body>
 </html>
