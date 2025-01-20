@@ -18,7 +18,8 @@
         }
 
         nav {
-            margin-bottom: 10px;
+            margin-bottom: 5px;
+            margin-top: 10px;
         }
 
         nav ul {
@@ -55,7 +56,7 @@
 
         .hero h1 {
             position: absolute;
-            bottom: -1.5rem;
+            bottom: -.8rem;
             left: 2rem;
             color: white;
             font-size: 3rem;
@@ -121,13 +122,13 @@
             <h2 class="title">Masters student in Demography in the European Doctoral School of Demography (EDSD)</h2>
             <p>Institut national d'études démographiques (INED)</p>
 
-        <button onclick="copyEmail()" style="display: flex; align-items: center; gap: 0.5rem; padding: 6px 12px; border: 1px solid #666; background: none; cursor: pointer; border-radius: 4px; color: #666; font-family: inherit; font-size: 1rem; font-weight: 300; margin: 1rem 0;">
-            cbtrigos@gmail.com
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-            </svg>
-        </button>
+            <p style="display: flex; align-items: center; cursor: pointer;" onclick="copyEmail()">
+                cbtrigos@gmail.com
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" style="margin-left: 6px; opacity: 0.6;">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            </p>
             <p class="address">
                 Campus Condorcet<br>
                 9 cours des Humanités<br>
@@ -159,16 +160,28 @@
     <!-- CV Section -->
     <section id="cv" class="content-section">
         <h2>Curriculum Vitae</h2>
-        <div style="margin-top: 1.5rem;">
-            <a href="https://drive.google.com/file/d/1cEOjG4A5notBAsbOYVVU6HU21UbyrAgU/view?usp=sharing" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #666; padding: 8px 16px; border: 1px solid #666; border-radius: 4px;">
-                View CV
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-            </a>
-        </div>
+        <!-- Download button -->
+               <a href="https://drive.google.com/file/d/1cEOjG4A5notBAsbOYVVU6HU21UbyrAgU/view?usp=sharing" 
+                  target="_blank" 
+                  style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #666; padding: 8px 16px; border: 1px solid #666; border-radius: 4px; margin-top: 1rem;">
+                   Download CV
+                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                       <polyline points="7 10 12 15 17 10"/>
+                       <line x1="12" y1="15" x2="12" y2="3"/>
+                   </svg>
+               </a>
+       
+        <div style="margin-top: 1.5rem; width: 100%;">
+               <!-- PDF Viewer -->
+               <iframe 
+                   src="https://drive.google.com/file/d/1cEOjG4A5notBAsbOYVVU6HU21UbyrAgU/preview" 
+                   style="width: 100%; height: 800px; border: none;"
+                   allow="autoplay">
+               </iframe>
+               
+              
+           </div>
     </section>
 
 
@@ -194,10 +207,10 @@
         function copyEmail() {
             navigator.clipboard.writeText('cbtrigos@gmail.com')
                 .then(() => {
-                    const button = document.querySelector('button');
-                    button.style.backgroundColor = '#e8e8e8';
+                    const emailP = document.querySelector('p[onclick="copyEmail()"]');
+                    emailP.style.opacity = '0.5';
                     setTimeout(() => {
-                        button.style.backgroundColor = '';
+                        emailP.style.opacity = '1';
                     }, 200);
                 })
                 .catch(err => {
