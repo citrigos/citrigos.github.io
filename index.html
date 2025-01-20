@@ -111,13 +111,17 @@
     <!-- Home Section -->
     <section id="home" class="content-section active">
         <div class="hero">
-            <img src="/api/placeholder/800/400" alt="Hero Image">
+            <img src="/images/img_citlali.jpg" alt="Photo of Citlali">
             <h1>Citlali Trigos-Raczkowski</h1>
         </div>
 
         <div class="affiliations">
             <h2 class="title">Masters student in Demography in the European Doctoral School of Demography (EDSD)</h2>
             <p>Institut national d'études démographiques (INED)</p>
+            <span>cbtrigos@gmail.com</span>
+    <button onclick="copyEmail()" style="padding: 4px 12px; border: 1px solid #666; background: none; cursor: pointer; border-radius: 4px; color: #666;">
+        Copy
+    </button>
             <p class="address">
                 Campus Condorcet<br>
                 9 cours des Humanités<br>
@@ -130,26 +134,37 @@
     <!-- Work in Progress Section -->
     <section id="work" class="content-section">
         <h2>Work in Progress</h2>
-        <!-- Add your work in progress content here -->
+        <div style="margin-top: 1.5rem;">
+            <h3 style="color: #666; font-weight: 400; margin-bottom: 1rem;">Projects I'm leading:</h3>
+            <ol style="margin-bottom: 2rem;">
+                <li style="margin-bottom: 0.8rem">Union formation among immigrants and their descendants in Finland (co-first author with Kelsey Wright)</li>
+                <li style="margin-bottom: 0.8rem">Union dissolution among immigrants and their descendants in Finland</li>
+                <li style="margin-bottom: 0.8rem">Postpartum depression among immigrants and their descendants in Finland</li>
+            </ol>
+            
+            <h3 style="color: #666; font-weight: 400; margin-bottom: 1rem;">Additional Projects:</h3>
+            <ol>
+                <li>First births among immigrants and their descendants in Finland (led by Kelsey Wright)</li>
+            </ol>
+        </div>
     </section>
 
-    <!-- Publications Section -->
-    <section id="publications" class="content-section">
-        <h2>Publications</h2>
-        <!-- Add your publications here -->
-    </section>
 
     <!-- CV Section -->
     <section id="cv" class="content-section">
         <h2>Curriculum Vitae</h2>
-        <!-- Add your CV content here -->
+        <div style="margin-top: 1.5rem;">
+            <a href="files/CV_jan-2024.pdf" target="_blank" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #666; padding: 8px 16px; border: 1px solid #666; border-radius: 4px;">
+                View CV
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+            </a>
+        </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="content-section">
-        <h2>Contact</h2>
-        <!-- Add your contact information here -->
-    </section>
 
     <script>
         function showSection(sectionId) {
