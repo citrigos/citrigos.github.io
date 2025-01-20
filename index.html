@@ -33,12 +33,14 @@
         nav a {
             color: #666;
             text-decoration: none;
-            font-weight: 300;
+            font-weight: 300;  /* Keep this light weight for unselected */
             font-size: 1.1rem;
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  /* Ensure same font */
         }
 
         nav a:hover, nav a.active {
             color: #333;
+            font-weight: 400;  /* Just slightly bolder when active */
         }
 
         .hero {
@@ -100,6 +102,17 @@
             border-bottom: 1px solid #eee;
             padding-bottom: 0.5rem;
         }
+        #cv {
+            max-width: 1000px;  /* Increased from 800px */
+            width: 100%;
+        }
+
+        #cv iframe {
+            width: 100%;
+            height: 1100px;  /* Taller to show more content */
+            border: none;
+        }
+
     </style>
 </head>
 <body>
@@ -120,8 +133,6 @@
 
         <div class="affiliations">
             <h2 class="title">Masters student in Demography in the European Doctoral School of Demography (EDSD)</h2>
-            <p>Institut national d'études démographiques (INED)</p>
-
             <p style="display: flex; align-items: center; cursor: pointer;" onclick="copyEmail()">
                 cbtrigos@gmail.com
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" style="margin-left: 6px; opacity: 0.6;">
@@ -130,6 +141,7 @@
                 </svg>
             </p>
             <p class="address">
+                Institut national d'études démographiques (INED)<br>
                 Campus Condorcet<br>
                 9 cours des Humanités<br>
                 93322 Aubervilliers cedex<br>
@@ -140,13 +152,42 @@
 
     <!-- Work in Progress Section -->
     <section id="work" class="content-section">
-        <h2>Work in Progress</h2>
         <div style="margin-top: 1.5rem;">
             <h3 style="color: #666; font-weight: 400; margin-bottom: 1rem;">Projects I'm leading:</h3>
             <ol style="margin-bottom: 2rem;">
                 <li style="margin-bottom: 0.8rem">Union formation among immigrants and their descendants in Finland (co-first author with Kelsey Wright)</li>
                 <li style="margin-bottom: 0.8rem">Union dissolution among immigrants and their descendants in Finland</li>
-                <li style="margin-bottom: 0.8rem">Postpartum depression among immigrants and their descendants in Finland</li>
+                <li style="margin-bottom: 0.8rem">Postpartum depression among immigrants and their descendants in Finland
+                    <div style="margin-top: 0.5rem; margin-left: 1rem; font-size: 0.95rem;">
+                        Upcoming presentations:
+                        <ul style="margin-top: 0.3rem;">
+                            <li style="margin-bottom: 0.3rem">
+                                <a href="https://youngdemographers.github.io/conference.html" 
+                                   target="_blank" 
+                                   style="display: inline-flex; align-items: center; gap: 0.3rem; color: #666; text-decoration: none;">
+                                    Young Demographer's Conference, Prague, February 2025
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://ipc2025.iussp.org" 
+                                   target="_blank" 
+                                   style="display: inline-flex; align-items: center; gap: 0.3rem; color: #666; text-decoration: none;">
+                                    International Population Conference, Brisbane, Australia
+                                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
             </ol>
             
             <h3 style="color: #666; font-weight: 400; margin-bottom: 1rem;">Additional Projects:</h3>
@@ -159,29 +200,13 @@
 
     <!-- CV Section -->
     <section id="cv" class="content-section">
-        <h2>Curriculum Vitae</h2>
-        <!-- Download button -->
-               <a href="https://drive.google.com/file/d/1cEOjG4A5notBAsbOYVVU6HU21UbyrAgU/view?usp=sharing" 
-                  target="_blank" 
-                  style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; color: #666; padding: 8px 16px; border: 1px solid #666; border-radius: 4px; margin-top: 1rem;">
-                   Download CV
-                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                       <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                       <polyline points="7 10 12 15 17 10"/>
-                       <line x1="12" y1="15" x2="12" y2="3"/>
-                   </svg>
-               </a>
-       
         <div style="margin-top: 1.5rem; width: 100%;">
-               <!-- PDF Viewer -->
-               <iframe 
-                   src="https://drive.google.com/file/d/1cEOjG4A5notBAsbOYVVU6HU21UbyrAgU/preview" 
-                   style="width: 100%; height: 800px; border: none;"
-                   allow="autoplay">
-               </iframe>
-               
-              
-           </div>
+            <iframe 
+                src="https://drive.google.com/file/d/1cEOjG4A5notBAsbOYVVU6HU21UbyrAgU/preview" 
+                style="width: 100%; height: 1100px; border: none;"
+                allow="autoplay">
+            </iframe>
+        </div>
     </section>
 
 
