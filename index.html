@@ -54,6 +54,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: opacity 0.5s ease;
         }
 
         .hero h1 {
@@ -193,6 +194,23 @@
         color: #fff;
         text-shadow: 0 0 5px #ffb6c1;
     }
+
+    /* Hide party mode image by default */
+    .party-mode-img {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    /* Show party mode image when party mode is active */
+    .party-mode .normal-mode-img {
+        opacity: 0;
+    }
+
+    .party-mode .party-mode-img {
+        opacity: 1;
+    }
     
     
     /* Disco Ball */
@@ -257,6 +275,8 @@
 
         .hero {
             height: 300px;  /* Shorter on mobile */
+            margin-bottom: 40px;
+            overflow: hidden;
         }
 
         .hero h1 {
@@ -350,6 +370,12 @@
     <section id="home" class="content-section active">
         <div class="hero">
             <img src="/images/img_citlali.jpg" alt="Photo of Citlali">
+            <div class="hero">
+                <img src="/images/img_citlali_bw.jpg" alt="Black and White Photo of Citlali" class="normal-mode-img">
+                <img src="/images/img_citlali_color.jpg" alt="Color photo of Citlali" class="party-mode-img">
+                <h1>Citlali Trigos-Raczkowski</h1>
+            </div>
+
             <h1>Citlali Trigos-Raczkowski</h1>
         </div>
 
