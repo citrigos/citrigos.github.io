@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Citlali Trigos-Raczkowski - Academic Profile</title>
+    <title>Citlali Trigos-Raczkowski</title>
     <style>
         body {
             display: flex;
@@ -33,39 +33,46 @@
         nav a {
             color: #666;
             text-decoration: none;
-            font-weight: 300;  /* Keep this light weight for unselected */
+            font-weight: 300;
             font-size: 1.1rem;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  /* Ensure same font */
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         }
 
         nav a:hover, nav a.active {
             color: #333;
-            font-weight: 400;  /* Just slightly bolder when active */
+            font-weight: 400;
         }
 
         .hero {
             position: relative;
             width: 800px;
-            height: 400px;
-            margin-bottom: 40px;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .hero img {
             width: 100%;
-            height: 100%;
+            height: 400px;
             object-fit: cover;
             transition: opacity 0.5s ease;
         }
 
         .hero h1 {
-            position: absolute;
-            bottom: -.8rem;
-            left: 2rem;
-            color: white;
+            position: relative;
+            color: #333;
             font-size: 3rem;
             font-weight: 300;
-            margin: 0;
+            margin-top: 1rem;
             letter-spacing: -0.02em;
+        }
+        
+        .affiliations h2 {
+            margin: 0;
+            color: #666;
+            font-weight: 300;
+            font-size: 1.75;
         }
 
         .content-section {
@@ -77,10 +84,14 @@
             display: block;
         }
 
-        .title {
+        
+        .name {
+            font-size: 2rem;
             color: #666;
-            font-weight: 300;
-            margin-bottom: 0.5rem;
+            font-weight: 400;
+            margin-bottom: 0;
+            margin-top: 0;
+            padding: 0;
         }
 
         .affiliations {
@@ -92,7 +103,6 @@
             font-style: normal;
         }
 
-        /* CV specific styles */
         .cv-section {
             margin-bottom: 2rem;
         }
@@ -103,141 +113,135 @@
             border-bottom: 1px solid #eee;
             padding-bottom: 0.5rem;
         }
+
         #cv {
-            max-width: 1000px;  /* Increased from 800px */
+            max-width: 1000px;
             width: 100%;
         }
 
         #cv iframe {
             width: 100%;
-            height: 1100px;  /* Taller to show more content */
+            height: 1100px;
             border: none;
         }
 
-    /* Replace your existing light-switch styles with these */
-    .light-switch {
-        position: static;
-        width: 36px;      /* Wider for horizontal toggle */
-        height: 20px;     /* Shorter */
-        background: lightgray;  /* Pastel pink background 
-        border: none;     /* Remove border for cleaner look */
-        border-radius: 10px;  /* Make it oval */
-        cursor: pointer;
-        display: flex;
-        align-items: center;  /* Center the circle vertically */
-        padding: 2px;     /* Small padding for toggle movement */
-        margin-left: 1rem;
-        transition: background-color 0.3s;
-    }
+        .light-switch {
+            position: static;
+            width: 36px;
+            height: 20px;
+            background: lightgray;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            padding: 2px;
+            margin-left: 1rem;
+            transition: background-color 0.3s;
+        }
 
-    .switch-toggle {
-        width: 16px;      /* Circle size */
-        height: 16px;     /* Circle size */
-        background: #fff; /* White toggle */
-        border-radius: 50%;  /* Perfect circle */
-        transition: transform 0.3s, background-color 0.3s;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Subtle shadow */
-    }
+        .switch-toggle {
+            width: 16px;
+            height: 16px;
+            background: #fff;
+            border-radius: 50%;
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
 
-    .light-switch.on {
-        background: #ff69b4;  /* Brighter pink when on */
-    }
+        .light-switch.on {
+            background: #ff69b4;
+        }
 
-    .light-switch.on .switch-toggle {
-        transform: translateX(16px);  /* Move right instead of down */
-    }
+        .light-switch.on .switch-toggle {
+            transform: translateX(16px);
+        }
 
-    /* Optional hover effect */
-    .light-switch:hover {
-        opacity: 0.9;
-    }
+        .light-switch:hover {
+            opacity: 0.9;
+        }
 
-    /* Add subtle inner shadow to the switch container */
-    .light-switch::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(to bottom, rgba(0,0,0,0.05), transparent);
-        border-radius: 1px;
-        pointer-events: none;
-    }
-        
-    .party-mode {
-        background: linear-gradient(45deg, 
-            #ffd1dc,  /* pastel pink */
-            #ffdab9,  /* peach */
-            #e6e6fa,  /* lavender */
-            #b0e0e6,  /* powder blue */
-            #98fb98,  /* pale green */
-            #ffefd5   /* papaya whip */
-        );
-        background-size: 1200% 1200%;
-        animation: gradientBG 15s ease infinite;  /* Slowed down animation */
-    }
+        .light-switch::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.05), transparent);
+            border-radius: 1px;
+            pointer-events: none;
+        }
 
-    .party-mode nav a {
-        color: #fff;
-        text-shadow: 0 0 5px #ffb6c1, 0 0 10px #ff69b4;
-    }
+        .party-mode {
+            background: linear-gradient(45deg, 
+                #ffd1dc,
+                #ffdab9,
+                #e6e6fa,
+                #b0e0e6,
+                #98fb98,
+                #ffefd5
+            );
+            background-size: 1200% 1200%;
+            animation: gradientBG 15s ease infinite;
+        }
 
-    .party-mode .title,
-    .party-mode h2,
-    .party-mode h3 {
-        color: #fff;
-        text-shadow: 0 0 5px #ffa07a, 0 0 10px #ff8c69;
-    }
+        .party-mode nav a {
+            color: #fff;
+            text-shadow: 0 0 5px #ffb6c1, 0 0 10px #ff69b4;
+        }
 
-    .party-mode p {
-        color: #fff;
-        text-shadow: 0 0 5px #ffb6c1;
-    }
+        .party-mode .title,
+        .party-mode h2,
+        .party-mode h3 {
+            color: #fff;
+            text-shadow: 0 0 5px #ffa07a, 0 0 10px #ff8c69;
+        }
 
-    /* Hide party mode image by default */
-    .party-mode-img {
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
+        .party-mode p {
+            color: #fff;
+            text-shadow: 0 0 5px #ffb6c1;
+        }
 
-    /* Show party mode image when party mode is active */
-    .party-mode .normal-mode-img {
-        opacity: 0;
-    }
+        .party-mode-img {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
 
-    .party-mode .party-mode-img {
-        opacity: 1;
-    }
-    
-    
-    /* Disco Ball */
-    .disco-ball {
-        display: none;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        width: 120px;
-        height: 120px;
-        background: radial-gradient(circle at 50% 50%, #fff 0%, #ffd1dc 50%, #ffb6c1 100%);
-        border-radius: 50%;
-        box-shadow: 
-            inset 0 0 30px #fff,
-            inset 20px 0 60px #ffd1dc,
-            inset -20px 0 60px #ffefd5,
-            inset 20px 0 200px #ffb6c1,
-            inset -20px 0 200px #ffdab9,
-            0 0 30px #fff,
-            -10px 0 60px #ffd1dc,
-            10px 0 60px #ffefd5;
-        animation: rotate 5s linear infinite, sparkle 0.5s linear infinite;
-    }
-    
-    .party-mode .disco-ball {
-        display: block;
-    }
+        .party-mode .normal-mode-img {
+            opacity: 0;
+        }
+
+        .party-mode .party-mode-img {
+            opacity: 1;
+        }
+
+        .disco-ball {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 120px;
+            height: 120px;
+            background: radial-gradient(circle at 50% 50%, #fff 0%, #ffd1dc 50%, #ffb6c1 100%);
+            border-radius: 50%;
+            box-shadow: 
+                inset 0 0 30px #fff,
+                inset 20px 0 60px #ffd1dc,
+                inset -20px 0 60px #ffefd5,
+                inset 20px 0 200px #ffb6c1,
+                inset -20px 0 200px #ffdab9,
+                0 0 30px #fff,
+                -10px 0 60px #ffd1dc,
+                10px 0 60px #ffefd5;
+            animation: rotate 5s linear infinite, sparkle 0.5s linear infinite;
+        }
+
+        .party-mode .disco-ball {
+            display: block;
+        }
 
         @keyframes gradientBG {
             0% { background-position: 0% 50%; }
@@ -255,103 +259,92 @@
             50% { opacity: 1; }
             100% { opacity: 0.8; }
         }
-        
-        /* Add these media queries at the end of your CSS */
-    @media screen and (max-width: 850px) {
-        body {
-            padding: 15px;
+
+        @media screen and (max-width: 850px) {
+            body {
+                padding: 10px;
+            }
+
+            nav, .hero, .content-section {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                margin-bottom: 10px;
+            }
+
+            .hero img {
+                height: 300px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+                margin-top: 0.8rem;
+            }
+
+            p[onclick="copyEmail()"] svg {
+                width: 20px;
+                height: 20px;
+                margin-left: 8px;
+            }
+
+            #work ol {
+                padding-left: 20px;
+            }
+
+            #cv iframe {
+                height: 800px;
+            }
+
+            .disco-ball {
+                width: 80px;
+                height: 80px;
+                top: 10px;
+                right: 10px;
+            }
         }
 
-        nav, .hero, .content-section {
-            width: 100%;
-            max-width: 100%;
-        }
+        @media screen and (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 0.8rem;
+            }
 
-        nav ul {
-            gap: 1rem;
-            flex-wrap: wrap;  /* Allow items to wrap on very small screens */
-            justify-content: center;
-        }
+            nav a {
+                font-size: 1rem;
+            }
 
-        .hero {
-            height: 300px;  /* Shorter on mobile */
-            margin-bottom: 40px;
-            overflow: hidden;
-        }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
 
-        .hero h1 {
-            font-size: 2rem;  /* Smaller font on mobile */
-            bottom: 0;
-            left: 1rem;
-        }
+            .title {
+                font-size: 1.2rem;
+            }
 
-        /* Make the copy email button more touch-friendly */
-        p[onclick="copyEmail()"] svg {
-            width: 20px;
-            height: 20px;
-            margin-left: 8px;
-        }
+            .light-switch {
+                margin: 0.5rem 0;
+            }
 
-        /* Adjust work section padding */
-        #work ol {
-            padding-left: 20px;
+            li a {
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+            }
         }
-
-        /* Make the CV iframe responsive */
-        #cv iframe {
-            height: 800px;
-        }
-
-        /* Adjust disco ball position */
-        .disco-ball {
-            width: 80px;
-            height: 80px;
-            top: 10px;
-            right: 10px;
-        }
-    }
-
-    /* Additional adjustments for very small screens */
-    @media screen and (max-width: 480px) {
-        nav ul {
-            gap: 0.8rem;
-        }
-
-        nav a {
-            font-size: 1rem;
-        }
-
-        .hero h1 {
-            font-size: 1.8rem;
-        }
-
-        .title {
-            font-size: 1.2rem;
-        }
-        
-        /* Stack nav items vertically on very small screens */
-        nav ul {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .light-switch {
-            margin: 0.5rem 0;
-        }
-
-        /* Adjust presentations list */
-        li a {
-            flex-wrap: wrap;
-            justify-content: center;
-            text-align: center;
-        }
-    }
-
     </style>
 </head>
 <body>
-<div class="disco-ball"></div>
+    <div class="disco-ball"></div>
     <nav>
         <ul style="display: flex; align-items: center;">
             <li><a href="#home" class="active" onclick="showSection('home')">Home</a></li>
@@ -360,25 +353,19 @@
             <li>
                 <div class="light-switch" onclick="togglePartyMode()">
                     <div class="switch-toggle"></div>
-                
                 </div>
             </li>
         </ul>
     </nav>
 
-    <!-- Home Section -->
     <section id="home" class="content-section active">
         <div class="hero">
-            <div class="hero">
-                <img src="/images/img_citlali_bw.jpg" alt="Black and White Photo of Citlali" class="normal-mode-img">
-                <img src="/images/img_citlali_color.jpg" alt="Color photo of Citlali" class="party-mode-img">
-            </div>
-
-            <h1>Citlali Trigos-Raczkowski</h1>
+            <img src="/images/img_citlali_bw.jpg" alt="Black and White Photo of Citlali" class="normal-mode-img">
+            <img src="/images/img_citlali_color.jpg" alt="Color photo of Citlali" class="party-mode-img">
         </div>
-
         <div class="affiliations">
-            <h2 class="title">Masters student in Demography in the European Doctoral School of Demography (EDSD)</h2>
+            <p class="name">Citlali Trigos-Raczkowski</p>
+            <h2 class="title">Masters student in Demography at the European Doctoral School of Demography (EDSD)</h2>
             <p style="display: flex; align-items: center; cursor: pointer;" onclick="copyEmail()">
                 cbtrigos@gmail.com
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" style="margin-left: 6px; opacity: 0.6;">
