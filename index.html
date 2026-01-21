@@ -19,15 +19,16 @@
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             line-height: 1.6;
             padding: 20px 40px;
             color: #333;
         }
 
         nav {
-            margin-bottom: 5px;
+            margin-bottom: 20px;
             margin-top: 10px;
+            width: 800px;
         }
 
         nav ul {
@@ -43,10 +44,14 @@
             text-decoration: none;
             font-weight: 300;
             font-size: 1.1rem;
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            transition: color 0.2s ease;
         }
 
-        nav a:hover, nav a.active {
+        nav a:hover {
+            color: #333;
+        }
+
+        nav a.active {
             color: #333;
             font-weight: 400;
         }
@@ -75,7 +80,7 @@
             margin-top: 1rem;
             letter-spacing: -0.02em;
         }
-        
+
         .affiliations h2 {
             margin: 0;
             color: #666;
@@ -92,7 +97,7 @@
             display: block;
         }
 
-        
+
         .name {
             font-size: 2rem;
             color: #666;
@@ -270,18 +275,81 @@
 
         @media screen and (max-width: 850px) {
             body {
-                padding: 10px;
+                padding: 20px;
+                align-items: stretch;
             }
 
-            nav, .hero, .content-section {
+            nav {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            nav ul {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+            }
+
+            .hero {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .hero img {
+                width: 100%;
+                height: auto;
+                max-height: 400px;
+            }
+
+            .content-section {
                 width: 100%;
                 max-width: 100%;
             }
 
+            .name {
+                font-size: 1.6rem;
+            }
+
+            .title {
+                font-size: 1.1rem;
+            }
+
+            #work ol {
+                padding-left: 20px;
+            }
+
+            #work li {
+                font-size: 0.95rem;
+            }
+
+            #cv iframe {
+                height: 600px;
+            }
+
+            .disco-ball {
+                width: 60px;
+                height: 60px;
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+
+            nav {
+                margin-bottom: 15px;
+            }
+
             nav ul {
                 gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
+                justify-content: flex-start;
+            }
+
+            nav a {
+                font-size: 1rem;
             }
 
             .hero {
@@ -289,64 +357,39 @@
             }
 
             .hero img {
-                height: 300px;
+                max-height: 300px;
             }
 
-            .hero h1 {
-                font-size: 2rem;
-                margin-top: 0.8rem;
+            .affiliations {
+                margin-bottom: 1.5rem;
             }
 
-            p[onclick="copyEmail()"] svg {
-                width: 20px;
-                height: 20px;
-                margin-left: 8px;
-            }
-
-            #work ol {
-                padding-left: 20px;
-            }
-
-            #cv iframe {
-                height: 800px;
-            }
-
-            .disco-ball {
-                width: 80px;
-                height: 80px;
-                top: 10px;
-                right: 10px;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            nav ul {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 0.8rem;
-            }
-
-            nav a {
-                font-size: 1rem;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
+            .name {
+                font-size: 1.5rem;
             }
 
             .title {
-                font-size: 1.2rem;
+                font-size: 1rem;
+            }
+
+            .address {
+                font-size: 0.9rem;
             }
 
             .light-switch {
-                margin: 0.5rem 0;
+                margin-left: 0.5rem;
             }
 
-            li a {
-                flex-wrap: wrap;
-                justify-content: center;
-                text-align: center;
+            #work h3 {
+                font-size: 1.1rem;
+            }
+
+            #work li {
+                font-size: 0.9rem;
+            }
+
+            #cv iframe {
+                height: 500px;
             }
         }
     </style>
@@ -472,10 +515,15 @@
             navigator.clipboard.writeText('citrigos@berkeley.edu')
                 .then(() => {
                     const emailP = document.querySelector('p[onclick="copyEmail()"]');
-                    emailP.style.opacity = '0.5';
+                    const originalText = emailP.innerHTML;
+                    emailP.innerHTML = 'Email copied! ✓';
+                    emailP.style.color = '#4a7c8c';
+                    emailP.style.fontWeight = '500';
                     setTimeout(() => {
-                        emailP.style.opacity = '1';
-                    }, 200);
+                        emailP.innerHTML = originalText;
+                        emailP.style.color = '';
+                        emailP.style.fontWeight = '';
+                    }, 1500);
                 })
                 .catch(err => {
                     console.error('Failed to copy email:', err);
