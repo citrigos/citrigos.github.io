@@ -368,6 +368,142 @@
                 font-size: 1.5rem;
             }
 
+            p[onclick="copyEmail()"] svg {
+                width: 20px;
+                height: 20px;
+                margin-left: 8px;
+            }
+
+            #work ol {
+                padding-left: 20px;
+            }
+
+            #cv iframe {
+                height: 800px;
+            }
+
+            .disco-ball {
+                width: 80px;
+                height: 80px;
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            max-width: 800px;
+        }
+
+        .project-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .project-card h3 {
+            color: #333;
+            font-weight: 400;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tag {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background: #f5f5f5;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            color: #666;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-tag.tech {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .project-tag.demo {
+            background: #f3e5f5;
+            color: #7b1fa2;
+        }
+
+        .project-description {
+            color: #666;
+            line-height: 1.6;
+            margin: 1rem 0;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .project-link:hover {
+            color: #333;
+        }
+
+        .party-mode .project-card {
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .party-mode .project-card h3 {
+            color: #fff;
+            text-shadow: 0 0 5px #ffa07a;
+        }
+
+        .party-mode .project-description {
+            color: #fff;
+            text-shadow: 0 0 3px #ffb6c1;
+        }
+
+        .party-mode .project-tag {
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+
+        .party-mode .project-link {
+            color: #fff;
+            text-shadow: 0 0 3px #ffb6c1;
+        }
+
+        @media screen and (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 0.8rem;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
             .title {
                 font-size: 1rem;
             }
@@ -391,6 +527,11 @@
             #cv iframe {
                 height: 500px;
             }
+
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -400,6 +541,7 @@
         <ul style="display: flex; align-items: center;">
             <li><a href="#home" class="active" onclick="showSection('home')">Home</a></li>
             <li><a href="#work" onclick="showSection('work')">Work in Progress</a></li>
+            <li><a href="#projects" onclick="showSection('projects')">Projects</a></li>
             <li><a href="#cv" onclick="showSection('cv')">CV</a></li>
             <li>
                 <div class="light-switch" onclick="togglePartyMode()">
@@ -479,6 +621,98 @@
         </div>
     </section>
 
+
+    <!-- Projects Section -->
+    <section id="projects" class="content-section">
+        <div style="margin-top: 1.5rem;">
+            <h2 style="color: #666; font-weight: 300; margin-bottom: 1rem;">Projects</h2>
+            <p style="color: #666; margin-bottom: 2rem;">A collection of coding and demographic data science projects</p>
+
+            <div class="project-grid">
+                <!-- Missing Migrants Project -->
+                <div class="project-card">
+                    <h3>Missing Migrants</h3>
+                    <div>
+                        <span class="project-tag demo">Demographics</span>
+                        <span class="project-tag demo">Data Science</span>
+                    </div>
+                    <p class="project-description">
+                        Interactive data visualization and analysis of missing migrants data, exploring patterns and trends in global migration.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/citrigos/missing-migrants" target="_blank" class="project-link">
+                            GitHub
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                        <a href="https://missing-migrants.streamlit.app/" target="_blank" class="project-link">
+                            Live Demo
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Movie Picker Project -->
+                <div class="project-card">
+                    <h3>Movie Picker</h3>
+                    <div>
+                        <span class="project-tag tech">Web Development</span>
+                        <span class="project-tag tech">JavaScript</span>
+                    </div>
+                    <p class="project-description">
+                        A simple web application to help choose movies. Built with vanilla JavaScript and deployed on GitHub Pages.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/citrigos/movie-picker" target="_blank" class="project-link">
+                            GitHub
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                        <a href="https://citrigos.github.io/movie-picker/" target="_blank" class="project-link">
+                            Live Demo
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Tech Tools Project -->
+                <div class="project-card">
+                    <h3>Tech Tools</h3>
+                    <div>
+                        <span class="project-tag tech">Resources</span>
+                        <span class="project-tag tech">Curation</span>
+                    </div>
+                    <p class="project-description">
+                        A curated compilation of software tools and resources I find useful for development and productivity.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://citrigos.github.io/tech-tools/" target="_blank" class="project-link">
+                            Live Site
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                <polyline points="15 3 21 3 21 9"></polyline>
+                                <line x1="10" y1="14" x2="21" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- CV Section -->
     <section id="cv" class="content-section">
