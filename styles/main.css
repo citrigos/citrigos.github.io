@@ -13,7 +13,8 @@
         nav {
             margin-bottom: 20px;
             margin-top: 10px;
-            width: 1200px;
+            width: 100%;
+            max-width: 1200px;
         }
 
         nav ul {
@@ -64,7 +65,8 @@
 
         .hero {
             position: relative;
-            width: 800px;
+            width: 100%;
+            max-width: 800px;
             margin-bottom: 10px;
             display: flex;
             flex-direction: column;
@@ -151,19 +153,22 @@
 
         .home-content {
             max-width: 1200px;
+            width: 100%;
             display: flex;
             gap: 3rem;
             align-items: flex-start;
         }
 
         .home-main {
-            flex: 0 0 800px;
+            flex: 1 1 auto;
+            max-width: 800px;
             display: flex;
             flex-direction: column;
         }
 
         .news-panel {
             width: 300px;
+            min-width: 280px;
             background: #f5f5f5;
             padding: 1.5rem;
             border-radius: 8px;
@@ -279,7 +284,8 @@
             color: #999;
             font-size: 0.9rem;
             border-top: 1px solid #e0e0e0;
-            width: 1200px;
+            width: 100%;
+            max-width: 1200px;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         }
 
@@ -341,6 +347,9 @@
             padding: 2px;
             margin-left: 0;
             transition: background-color 0.3s;
+            min-height: 44px;
+            min-width: 44px;
+            justify-content: center;
         }
 
         .switch-toggle {
@@ -461,7 +470,7 @@
 
         @media screen and (max-width: 850px) {
             body {
-                padding: 20px;
+                padding: 20px 15px;
                 align-items: stretch;
             }
 
@@ -518,11 +527,20 @@
                 top: 10px;
                 right: 10px;
             }
+
+            .news-panel {
+                width: 100%;
+            }
+
+            footer {
+                margin-top: 5rem;
+                padding: 1.5rem 0;
+            }
         }
 
         @media screen and (max-width: 480px) {
             body {
-                padding: 15px;
+                padding: 15px 10px;
             }
 
             nav {
@@ -530,12 +548,21 @@
             }
 
             nav ul {
-                gap: 1rem;
-                justify-content: flex-start;
+                gap: 0.6rem;
             }
 
             nav a {
-                font-size: 1rem;
+                font-size: 0.95rem;
+                padding: 0.5rem 0;
+                display: block;
+            }
+
+            nav li {
+                width: 100%;
+            }
+
+            nav .nav-right li {
+                width: auto;
             }
 
             .hero {
@@ -551,37 +578,67 @@
             }
 
             .name {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
+            }
+
+            .address {
+                font-size: 0.85rem;
             }
 
             p[onclick="copyEmail()"] svg {
-                width: 20px;
-                height: 20px;
-                margin-left: 8px;
+                width: 16px;
+                height: 16px;
+                margin-left: 6px;
+            }
+
+            .bio p {
+                font-size: 0.9rem;
             }
 
             #work ol {
-                padding-left: 20px;
+                padding-left: 15px;
+            }
+
+            #work li {
+                font-size: 0.85rem;
             }
 
             #cv iframe {
-                height: 800px;
+                height: 600px;
             }
 
             .disco-ball {
-                width: 80px;
-                height: 80px;
+                width: 60px;
+                height: 60px;
                 top: 10px;
                 right: 10px;
+            }
+
+            .news-panel {
+                padding: 1rem;
+            }
+
+            .news-panel h3 {
+                font-size: 1.1rem;
+            }
+
+            .news-text {
+                font-size: 0.85rem;
+            }
+
+            footer {
+                margin-top: 3rem;
+                font-size: 0.85rem;
             }
         }
 
         .project-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
             max-width: 800px;
+            width: 100%;
         }
 
         .project-card {
@@ -743,18 +800,43 @@
 
             .home-main {
                 flex: 1 1 auto;
+                max-width: 100%;
             }
 
             .news-panel {
                 width: 100%;
+                min-width: auto;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            nav .nav-left {
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+            }
+
+            nav .nav-right {
+                flex-direction: row;
+                margin-left: 0;
+                margin-top: 0.5rem;
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            nav a {
+                font-size: 1rem;
             }
         }
 
         @media screen and (max-width: 480px) {
             nav ul {
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
                 gap: 0.8rem;
             }
 
@@ -801,5 +883,17 @@
             .project-grid {
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
+            }
+
+            .project-card {
+                padding: 1rem;
+            }
+
+            .contact-info p {
+                font-size: 0.9rem;
+            }
+
+            .bio {
+                width: 100%;
             }
         }
