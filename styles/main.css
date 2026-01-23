@@ -1,3 +1,7 @@
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             display: flex;
             flex-direction: column;
@@ -8,6 +12,8 @@
             line-height: 1.6;
             padding: 20px 40px;
             color: #333;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         nav {
@@ -169,10 +175,13 @@
         .news-panel {
             width: 300px;
             min-width: 280px;
+            max-width: 100%;
             background: #f5f5f5;
             padding: 1.5rem;
             border-radius: 8px;
             flex-shrink: 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .news-panel h3 {
@@ -205,6 +214,8 @@
             color: #666;
             font-size: 0.95rem;
             line-height: 1.5;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .news-text em {
@@ -214,10 +225,13 @@
         .news-text ul {
             margin: 0.3rem 0 0 0;
             padding-left: 1.2rem;
+            max-width: 100%;
         }
 
         .news-text li {
             margin-bottom: 0.3rem;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .party-mode a {
@@ -538,11 +552,6 @@
         @media screen and (max-width: 480px) {
             body {
                 padding: 15px 10px;
-                overflow-x: hidden;
-            }
-
-            * {
-                max-width: 100%;
             }
 
             nav {
