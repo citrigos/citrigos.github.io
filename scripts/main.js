@@ -17,7 +17,9 @@ async function loadPage(sectionId) {
         return html;
     } catch (error) {
         console.error(`Error loading page ${sectionId}:`, error);
-        return '<div>Error loading content</div>';
+        console.error('Make sure you are viewing this site through a web server (not file://)');
+        console.error('For local development, use: python3 -m http.server 8000');
+        return '<div style="padding: 2rem; color: #666;"><p>Error loading content. Please make sure you are viewing this site through a web server.</p><p>For local development, run: <code>python3 -m http.server 8000</code></p></div>';
     }
 }
 
