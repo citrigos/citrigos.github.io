@@ -1,0 +1,30 @@
+{
+  "news": [
+    {
+      "date": "January 2026",
+      "text": "Offered D-Lab / LRC Latinx Fellowship at UC Berkeley"
+    },
+    {
+      "date": "December 2025",
+      "text": "Invitation for poster presentation at All-UC Demography Conference in UCSB (February)"
+    },
+    {
+      "date": "August 2025",
+      "items": [
+        "Offered Chancellor's Fellowship at UC Berkeley",
+        "Began PhD Program at UC Berkeley"
+      ]
+    },
+    {
+      "date": "July 2025",
+      "items": [
+        "Defended Master's thesis <em>Mental Health Utilization in the Transition to Motherhood, Among Immigrants and their Descendants in Finland</em>",
+        "Invited for presentation at the International Population Conference in Brisbane, Australia"
+      ]
+    },
+    {
+      "date": "February 2025",
+      "text": "Young Demographer's Conference in Prague, Czechia"
+    }
+  ]
+}
