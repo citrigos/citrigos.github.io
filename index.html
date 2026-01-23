@@ -718,6 +718,41 @@
             text-shadow: 0 0 5px #ff69b4;
         }
 
+        /* Contact form styles */
+        input, textarea {
+            transition: border-color 0.2s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #999 !important;
+        }
+
+        button[type="submit"]:hover {
+            background: #555 !important;
+        }
+
+        .party-mode input,
+        .party-mode textarea {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .party-mode input:focus,
+        .party-mode textarea:focus {
+            border-color: #ffb6c1 !important;
+        }
+
+        .party-mode button[type="submit"] {
+            background: #ffb6c1 !important;
+            color: #333;
+            text-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+        }
+
+        .party-mode button[type="submit"]:hover {
+            background: #ff69b4 !important;
+        }
+
         @media screen and (max-width: 850px) {
             .home-content {
                 flex-direction: column;
@@ -797,6 +832,7 @@
                 <li><a href="#work" onclick="showSection('work')">Work in Progress</a></li>
                 <li><a href="#projects" onclick="showSection('projects')">Coding</a></li>
                 <li><a href="#cv" onclick="showSection('cv')">CV</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Contact</a></li>
             </div>
             <div class="nav-right">
                 <li style="display: flex; align-items: center;">
@@ -1052,6 +1088,36 @@
                         </a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="content-section">
+        <div style="margin-top: 1.5rem; max-width: 600px; width: 100%;">
+            <h2 style="color: #666; font-weight: 400; margin-bottom: 2rem; text-align: center;">Get in Touch</h2>
+
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                <div>
+                    <label for="name" style="display: block; margin-bottom: 0.5rem; color: #666; font-weight: 400;">Name</label>
+                    <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; font-size: 1rem;">
+                </div>
+
+                <div>
+                    <label for="email" style="display: block; margin-bottom: 0.5rem; color: #666; font-weight: 400;">Email</label>
+                    <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; font-size: 1rem;">
+                </div>
+
+                <div>
+                    <label for="message" style="display: block; margin-bottom: 0.5rem; color: #666; font-weight: 400;">Message</label>
+                    <textarea id="message" name="message" rows="6" required style="width: 100%; padding: 0.75rem; border: 1px solid #ddd; border-radius: 4px; font-family: inherit; font-size: 1rem; resize: vertical;"></textarea>
+                </div>
+
+                <button type="submit" style="padding: 0.75rem 2rem; background: #666; color: white; border: none; border-radius: 4px; font-size: 1rem; cursor: pointer; transition: background 0.2s ease; font-weight: 400;">Send Message</button>
+            </form>
+
+            <div style="margin-top: 3rem; text-align: center; color: #666;">
+                <p>Or reach me directly at <a href="mailto:citrigos@berkeley.edu" style="color: #444; font-weight: 600;">citrigos@berkeley.edu</a></p>
             </div>
         </div>
     </section>
