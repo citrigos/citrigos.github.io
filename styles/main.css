@@ -688,11 +688,14 @@
         }
 
         .poster-thumbnail {
-            max-height: 160px;
-            width: auto;
+            width: 100%;
+            max-width: 700px;
+            height: auto;
             border: 1px solid #ddd;
             border-radius: 4px;
             transition: opacity 0.2s;
+            display: block;
+            margin: 0.8rem 0;
         }
 
         .poster-thumbnail:hover {
@@ -978,7 +981,7 @@
             }
 
             .poster-thumbnail {
-                max-height: 110px;
+                max-width: 100%;
             }
 
             .research-intro {
