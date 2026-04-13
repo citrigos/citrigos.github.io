@@ -654,6 +654,48 @@
             }
         }
 
+        .research-theme {
+            margin-bottom: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .theme-question {
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .theme-desc {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .theme-paper {
+            padding-left: 1rem;
+            border-left: 2px solid #ddd;
+        }
+
+        .paper-citation {
+            font-size: 0.95rem;
+            color: #444;
+            margin-bottom: 0.5rem;
+        }
+
+        .presentation-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .presentation-list li {
+            font-size: 0.88rem;
+            color: #888;
+            padding: 0.2rem 0;
+        }
+
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
