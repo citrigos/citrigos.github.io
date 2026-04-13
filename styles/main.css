@@ -116,9 +116,6 @@
             display: block;
         }
 
-        #work {
-            max-width: 800px;
-        }
 
 
         .name {
@@ -647,7 +644,6 @@
             font-size: 0.95rem;
             margin-bottom: 2.5rem;
             line-height: 1.7;
-            max-width: 720px;
         }
 
         .research-theme {
