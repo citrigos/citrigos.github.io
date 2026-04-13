@@ -639,6 +639,14 @@
             }
         }
 
+        .page-title {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: #444;
+            margin-bottom: 2rem;
+        }
+
         .research-intro {
             color: #555;
             font-size: 0.95rem;
