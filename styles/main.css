@@ -116,6 +116,10 @@
             display: block;
         }
 
+        #work {
+            max-width: 800px;
+        }
+
 
         .name {
             font-size: 2rem;
@@ -521,14 +525,6 @@
                 font-size: 1.1rem;
             }
 
-            #work ol {
-                padding-left: 20px;
-            }
-
-            #work li {
-                font-size: 0.95rem;
-            }
-
             #cv iframe {
                 height: 600px;
             }
@@ -602,14 +598,6 @@
 
             .bio p {
                 font-size: 0.9rem;
-            }
-
-            #work ol {
-                padding-left: 15px;
-            }
-
-            #work li {
-                font-size: 0.85rem;
             }
 
             #cv iframe {
@@ -981,16 +969,24 @@
                 margin-left: 0.5rem;
             }
 
-            #work h3 {
-                font-size: 1.1rem;
+            #cv iframe {
+                height: 500px;
             }
 
-            #work li {
+            .theme-paper {
+                padding-left: 0.7rem;
+            }
+
+            .poster-thumbnail {
+                max-height: 110px;
+            }
+
+            .research-intro {
                 font-size: 0.9rem;
             }
 
-            #cv iframe {
-                height: 500px;
+            .theme-question {
+                font-size: 1rem;
             }
 
             .project-grid {
