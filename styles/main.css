@@ -748,6 +748,16 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
+        .project-card.static {
+            cursor: default;
+            opacity: 0.75;
+        }
+
+        .project-card.static:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
         .project-card h3 {
             color: #333;
             font-weight: 400;
